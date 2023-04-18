@@ -1,0 +1,25 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  midterm:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run basic terminal commands
+        run: |
+          pwd
+          ls
+
+      - name: Build Docker
+        run: |
+          docker build -t dsci-310-midterm .
+
+
